@@ -139,13 +139,28 @@ The platform supports **three OpenAI APIs**:
 Users can choose from 13+ AI models based on their needs:
 
 ```typescript
-// Available models with pricing
-GPT-4o-mini    $0.15/$0.60 per 1M tokens  // Cost-effective
-GPT-4o         $2.50/$10.00 per 1M tokens // High-intelligence
-o1-preview     $15.00/$60.00 per 1M tokens // Advanced reasoning
-GPT-5          $1.25/$10.00 per 1M tokens  // Flagship model
-DALL-E 3       $0.04-0.08 per image        // Image generation
+// GPT-4 Family (Vision-capable)
+GPT-4o-mini    $0.15/$0.60 per 1M tokens    // Fast, cost-effective
+GPT-4o         $2.50/$10.00 per 1M tokens   // High-intelligence
+GPT-4.1        $2.50/$10.00 per 1M tokens   // Enhanced reasoning
+
+// o-Series Reasoning Models (Extended thinking)
+o1-mini        $3.00/$12.00 + $12.00 reasoning per 1M tokens   // Efficient
+o1-preview     $15.00/$60.00 + $60.00 reasoning per 1M tokens  // Advanced
+o3             $20.00/$80.00 + $80.00 reasoning per 1M tokens  // Latest
+o3-mini        $3.50/$14.00 + $14.00 reasoning per 1M tokens   // Cost-effective
+
+// GPT-5 Flagship (Verbosity control, government ID required)
+GPT-5          $1.25/$10.00 + $10.00 reasoning per 1M tokens   // Flagship
+GPT-5-mini     $0.25/$2.00 + $2.00 reasoning per 1M tokens     // Balanced
+GPT-5-nano     $0.05/$0.40 + $0.40 reasoning per 1M tokens     // Ultra-fast
+
+// Image Generation
+DALL-E 2       $2.00 per image                                 // Fast
+DALL-E 3       $4.00-8.00 per image (Standard/HD)              // High-quality
+gpt-image-1    $5.00 input / $40.00 output                     // Latest
 ```
+
 
 ### 2. Advanced Mode System
 
@@ -273,7 +288,66 @@ const stats = await prisma.usageStats.groupBy({
 });
 ```
 
----
+### 9. Custom AI Styles (System Prompts)
+
+**User-Created Personas**:
+- Create custom AI personalities with unique system prompts
+- Save up to 5 custom styles per user
+- Stored in database with `CustomStyle` model
+- Select from dropdown when chatting
+
+**Features**:
+- Name your custom style (e.g., "Code Reviewer", "Creative Writer")
+- Define custom system prompt that shapes AI behavior
+- Persistent across sessions
+- Per-user isolation (only you see your styles)
+
+**Use Cases**:
+- Technical documentation writer
+- Creative storytelling assistant
+- Code review expert
+- Subject-specific tutor
+- Business analyst persona
+
+**Implementation**:
+```typescript
+// Save custom style
+await prisma.customStyle.create({
+  data: {
+    userId: session.user.id,
+    name: "Code Reviewer",
+    systemPrompt: "You are an expert code reviewer focused on best practices..."
+  }
+});
+```
+
+### 10. Professional Code Rendering
+
+**Syntax Highlighting**:
+- Automatic language detection for code blocks
+- Powered by `react-syntax-highlighter` with Prism
+- VSCode Dark Plus theme (dark mode compatible)
+- Supports 100+ programming languages
+
+**Copy to Clipboard**:
+- One-click copy button on every code block
+- Visual feedback on successful copy
+- Preserves formatting and indentation
+- Works like ChatGPT/Claude interface
+
+**Features**:
+- Language badge shows detected language
+- Line numbers (optional)
+- Syntax coloring for readability
+- Monospace font with proper spacing
+- Mobile-responsive code blocks
+
+**Example Output**:
+- User asks: "Write a Python function to sort a list"
+- AI responds with properly formatted, syntax-highlighted code
+- Copy button appears in top-right of code block
+- Click to copy → clipboard contains clean code
+
 
 ## 🛠️ Development Approach
 
