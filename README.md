@@ -23,7 +23,7 @@ An enterprise-grade AI chat platform demonstrating **sophisticated architecture*
 💰 **88% Cost Reduction**
 - From: €23-60/user/month (ChatGPT Pro/Enterprise)
 - To: ~€2.70/user/month (usage-based OpenAI API)
-- Projected savings: €13,116/year for 60 users
+- Estimated savings: €13,116/year for 60 users (pending pilot validation)
 
 ⚡ **Advanced Features**
 - Dual API architecture (Chat + Responses + Image APIs)
@@ -65,7 +65,7 @@ Custom AI platform with:
 | **Cost visibility** | None | Real-time | **Full transparency** |
 | **Scalability** | Linear | Usage-based | **Optimal** |
 
-**ROI**: Break-even in <1 month | Year 1 savings: €13,116
+**Estimated ROI**: Break-even in <1 month | Projected Year 1 savings: €13,116
 
 ---
 
@@ -474,7 +474,7 @@ Current compliance: **40%** | Target: **90%+**
 
 **Status**: Functional MVP awaiting deployment (encryption + domain provisioning)
 
-**Pilot Plan**: 60 users (staff + students) across 4 campuses
+**Pilot Plan**: 60 users (staff + students) at SAMK University
 
 **Timeline**: November-December 2024
 
@@ -482,4 +482,4 @@ Current compliance: **40%** | Target: **90%+**
 
 **Note**: This is a portfolio case study documenting a real development project. Cost estimates are projections pending pilot program validation. The platform is production-ready pending final security enhancements (encryption, PostgreSQL, SSL).
 
-Built by A4R5H1L | [GitHub](https://github.com/A4R5H1L) | [LinkedIn](https://linkedin.com/in/yourprofile)
+Built by A4R5H1L | [GitHub](https://github.com/A4R5H1L)
