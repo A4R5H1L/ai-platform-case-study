@@ -20,6 +20,7 @@ if (ldapUser) {
 ```
 
 **Features**:
+- Advanced schema based on modern `ldapts`
 - No local password storage
 - Auto-provisioning on first login
 - Role derivation from LDAP groups
@@ -36,35 +37,47 @@ if (ldapUser) {
 
 ---
 
-## Rate Limiting
+## Dynamic Access Control & Model Groups
 
-### Database-Driven Limits
+### Group-Level Permissions
 
-Per-model, per-role enforcement:
+Instead of hardcoded identifiers, models are batched into `ModelGroups`. Users and roles are safely granted rights via `UserModelAccess`:
 
 ```typescript
-model ModelRateLimit {
-  model             String   // e.g., "gpt-5"
-  userRole          UserRole // student/staff/admin
-  monthlyTokenLimit Int      // Max tokens per month
-  dailyRequestLimit Int      // Max requests per day
+model ModelGroup {
+  id                String             @id @default(cuid())
+  name              String             @unique
+  models            String             // JSON: [{"id":"gpt-4o","dailyLimit":null},...]
+  monthlyBudgetCents Int?              // Monthly cost budget in cents
+}
+
+model UserModelAccess {
+  userId                    String?
+  userRole                  UserRole?
+  modelGroupId              String
+  dailyMessageLimit         Int?
+  monthlyBudgetOverrideCents Int?
+}
+```
+
+### Whitelisting & Blacklisting
+
+System admins have exact intervention abilities through `UserAccessList`:
+
+```typescript
+model UserAccessList {
+  email     String         @unique
+  listType  AccessListType // whitelist | blacklist
 }
 ```
 
 ### Enforcement Logic
 
-1. Check daily request count
-2. Check monthly token usage
-3. If exceeded: return 429 with reset time
-4. If allowed: process request, update counters
-
-### Example Limits
-
-| Model | Students | Staff | Admin |
-|-------|----------|-------|-------|
-| GPT-4o-mini | 100K/month | 500K/month | Unlimited |
-| GPT-5 | 50K/month | 200K/month | Unlimited |
-| o3 | 10K/month | 50K/month | Unlimited |
+1. Intercept user email via Blacklist -> Revoke if listed
+2. Identify assigned `ModelGroups` via explicit UserID or broad Role matching
+3. Evaluate Monthly Budget constraints ($ vs tokens)
+4. Evaluate specific limits for the individual Model (e.g., SAMK Qwen has 10x local bounds)
+5. Execute request -> Log to UsageStats
 
 ---
 
@@ -121,7 +134,8 @@ await prisma.usageStats.upsert({
 
 - View all users with roles
 - See individual usage stats
-- Adjust rate limits
+- Configure **Hard Blacklists & Whitelists** dynamically
+- **Group Management:** Assign models to logical groups (e.g., Cheap, Expensive, Image) without pushing code
 - Export usage data
 
 ### GDPR Compliance

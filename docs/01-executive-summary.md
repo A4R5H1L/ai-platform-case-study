@@ -4,9 +4,9 @@
 
 **AI Platform** - Enterprise multi-model chat system built for SAMK University as a cost-effective alternative to commercial ChatGPT licensing.
 
-**Status**: Production-ready platform awaiting deployment  
-**Target**: 60 users (staff + students) pilot program  
-**Scope**: Enterprise multi-model AI with cost optimization  
+**Status**: In Production (Staff Pilot Program Active)  
+**Target**: Scalable university-wide deployment (currently 60+ staff users)  
+**Scope**: Enterprise multi-model AI with local integration and cost optimization  
 
 ## The Challenge
 
@@ -26,10 +26,11 @@ SAMK University needed AI chat capabilities for education but faced prohibitive 
 Custom platform integrating OpenAI's APIs directly with usage-based pricing:
 
 **Key Capabilities**:
-- 13+ AI models (GPT-4, o1, o3, GPT-5, DALL-E)
+- 15+ AI models (GPT-4, o1, o3, GPT-5, DALL-E, Local DeepSeek/Qwen)
+- Deep Research APIs, KaTeX math rendering, and accurate citations integration
 - Dual API architecture (Chat + Responses + Image)
-- Enterprise features (LDAP SSO, rate limiting, cost tracking)
-- Real-time streaming chat
+- Enterprise features (LDAP SSO, rate limiting, granular model groups, whitelisting/blacklisting)
+- Real-time streaming chat with parsing timers
 - Image generation (3 models)
 - File processing (PDF/DOCX/images)
 
@@ -99,22 +100,21 @@ Seamless integration of three OpenAI APIs:
 
 ### 3. Enterprise Features
 
-**Authentication**: University LDAP/Active Directory SSO
+**Authentication**: Modern University LDAP/Active Directory SSO (ldapts)
 **Rate Limiting**: Per-role daily/monthly token limits
+**Access Control**: Robust Model Groups, User overrides, Hard Whitelisting & Blacklisting
 **Cost Tracking**: Real-time usage monitoring (cents precision)
 **Admin Dashboard**: User management, analytics, usage trends
 **Custom Prompts**: Per-user system prompt storage
 
 ### 4. Production Planning
 
-**Security Analysis**: 10 vulnerabilities documented
-- 3 critical (database, HTTPS, secrets)
-- Remediation roadmap: 10-18 hours
+**Security Analysis**: Security code audit executed and critical UI vulnerabilities remediated. Database Adminer strictly secured.
 
 **GDPR Compliance**: 9 requirements mapped
-- Current: 40% compliant
-- Target: 90%+ (30-40 hours work)
-- Privacy policy, data export, deletion endpoints
+- Current: High Compliance (Post-Architecture Updates)
+- Implemented: Message encryption at rest via dual-IV storage, right to erasure endpoints with cascade operations.
+- Pending: Privacy policy publication, Data export tooling.
 
 ## Development Approach
 
@@ -140,24 +140,25 @@ Seamless integration of three OpenAI APIs:
 
 ### What's Production-Ready
 
-✅ All 13+ models fully integrated  
-✅ Streaming chat with SSE  
-✅ LDAP authentication working  
+✅ All 15+ models fully integrated (including custom local education instances)
+✅ Deep Research features & automated citation/source generation
+✅ Streaming chat with SSE & parsing metrics
+✅ LDAP authentication working
+✅ Granular Admin Dashboards & White/Blacklist protections
 ✅ File processing (images, PDF, DOCX)  
-✅ Usage tracking with cost calculation  
-✅ Admin dashboard with analytics  
+✅ Usage tracking with cost calculation & Group overrides 
 ✅ Image generation (DALL-E 2/3)  
 ✅ Rate limiting (per-role, database-driven)  
+✅ Message Encryption at rest (GDPR req)
+✅ Right-to-Erasure APIs (GDPR req)
 
-### Pending for Deployment
+### Pending for Scale
 
-⏳ PostgreSQL migration (SQLite → production DB)  
-⏳ HTTPS/SSL setup  
-⏳ API key secrets management  
-⏳ Message encryption (GDPR requirement)  
+⏳ Privacy policy text localization
+⏳ Data export functionality  
 ⏳ Domain provisioning  
 
-**Estimated work**: 40-60 hours (security + encryption + deployment)
+**Projected effort**: Platform active; scaling requires procedural/legal finalization over architectural restructuring.
 
 ## Value Proposition for Portfolio
 

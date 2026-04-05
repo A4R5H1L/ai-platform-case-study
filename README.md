@@ -8,17 +8,56 @@
 [![OpenAI](https://img.shields.io/badge/OpenAI-Multi--API-412991?logo=openai)](https://openai.com/)
 [![Prisma](https://img.shields.io/badge/Prisma-6.16-2D3748?logo=prisma)](https://www.prisma.io/)
 
+## 📸 Visual Showcase
+
+### User Experience
+<div align="center">
+  <img src="roboai-images/login_screen.png" alt="Login Screen" width="400" />
+</div>
+<br/>
+<div align="center">
+  <img src="roboai-images/main_interface.png" alt="Main Interface" width="800" />
+  <p><em>Sleek, modern Chat Interface powered by Next.js & Framer Motion</em></p>
+</div>
+<br/>
+
+### Model Capabilities & Settings
+<div align="center">
+  <img src="roboai-images/normal_model.png" alt="Standard Model" width="400" />
+  <img src="roboai-images/reasoning_model.png" alt="Reasoning Model" width="400" />
+</div>
+<div align="center">
+  <img src="roboai-images/reasoning_refrence.png" alt="Reasoning Reference" width="800" />
+  <p><em>Rich formatting with sources, thinking process, and code highlights</em></p>
+</div>
+<br/>
+<div align="center">
+  <img src="roboai-images/user_controls.png" alt="User Settings & Persistent Personas" width="800" />
+  <p><em>Extensive user controls, including Custom Styles and default model mappings</em></p>
+</div>
+
+### Admin Tools & Governance
+<div align="center">
+  <img src="roboai-images/admin_dashboard.png" alt="Admin Dashboard Overview" width="800" />
+  <img src="roboai-images/model_access.png" alt="Group Model Access" width="800" />
+  <img src="roboai-images/white&black_list.png" alt="Access Control Management" width="800" />
+  <p><em>Comprehensive administrative controls for model groupings, rate limiting, and exact user permissions</em></p>
+</div>
+
+---
+
 ## 🎯 Project Overview
 
 An enterprise-grade AI chat platform demonstrating **sophisticated architecture**, **multi-model integration**, and **production-ready thinking**. Built as a cost-effective alternative to commercial ChatGPT licensing for a 60-user university pilot program.
 
 ### Key Achievements
 
-🚀 **13+ AI Models Integrated**
+🚀 **15+ AI Models Integrated**
 - GPT-4 family (GPT-4o, GPT-4o-mini, GPT-4.1)
 - o-series reasoning models (o1-mini, o1-preview, o3, o3-mini)
 - **GPT-5 flagship** (GPT-5, GPT-5-mini, GPT-5-nano) with government ID verification
 - Image generation (DALL-E 2, DALL-E 3, gpt-image-1)
+- **Local Open-Source & Custom Models** (SAMK Qwen Integration, DeepSeek, Local Reasoning)
 
 💰 **88% Cost Reduction**
 - From: €23-60/user/month (ChatGPT Pro/Enterprise)
@@ -32,6 +71,9 @@ An enterprise-grade AI chat platform demonstrating **sophisticated architecture*
 - Enterprise LDAP authentication
 - Per-role rate limiting and cost tracking
 - Full image generation with safety filtering
+- Robust **Admin Dashboard** with custom Model Groups & User Access Control (Whitelist/Blacklist)
+- Advanced categorized **Model Selection UI** with real-time search and icons
+- Highly persistent User Preferences (Default Models, Custom Personas UI)
 
 🏢 **Production Planning**
 - Comprehensive security analysis (10 vulnerabilities documented)
@@ -134,9 +176,9 @@ The platform supports **three OpenAI APIs**:
 
 ## ✨ Feature Showcase
 
-### 1. Multi-Model Selection
+### 1. Multi-Model Selection & Custom Local Run
 
-Users can choose from 13+ AI models based on their needs:
+Users can choose from diverse AI models grouped logically (Flagship, Reasoning, Image, Local) utilizing a powerful searchable model selector UI:
 
 ```typescript
 // GPT-4 Family (Vision-capable)
@@ -154,6 +196,10 @@ o3-mini        $3.50/$14.00 + $14.00 reasoning per 1M tokens   // Cost-effective
 GPT-5          $1.25/$10.00 + $10.00 reasoning per 1M tokens   // Flagship
 GPT-5-mini     $0.25/$2.00 + $2.00 reasoning per 1M tokens     // Balanced
 GPT-5-nano     $0.05/$0.40 + $0.40 reasoning per 1M tokens     // Ultra-fast
+
+// Local & Custom Education Models (Data secured on-premises)
+SAMK Qwen      Local Inference                                 // Secure Institutional Data
+DeepSeek R1    Local Inference                                 // Advanced Local Reasoning
 
 // Image Generation
 DALL-E 2       $2.00 per image                                 // Fast
@@ -288,18 +334,26 @@ const stats = await prisma.usageStats.groupBy({
 });
 ```
 
-### 9. Custom AI Styles (System Prompts)
+### 9. Dynamic Access Control & Model Groups
+
+The platform administration allows granular constraint mechanisms previously unavailable via generic commercial packages:
+- **Model Groups**: Logically combine models (e.g., "Expensive Models", "Local Safe Models", "Image Creators") and assign access based on role identifiers (student, staff, admin).
+- **Hard Whitelisting & Blacklisting**: Intercept users by exact identifier to grant or suspend their platform privileges directly.
+- **Limit Controls**: Enforce history truncation for specific models (like Qwen) to preserve context limits dynamically without code modifications.
+
+### 10. Custom AI Styles (System Prompts)
 
 **User-Created Personas**:
 - Create custom AI personalities with unique system prompts
 - Save up to 5 custom styles per user
 - Stored in database with `CustomStyle` model
 - Select from dropdown when chatting
+- Persistent UI elements ensure seamless UX across app boundaries
 
 **Features**:
 - Name your custom style (e.g., "Code Reviewer", "Creative Writer")
 - Define custom system prompt that shapes AI behavior
-- Persistent across sessions
+- Persistent across sessions & auto-loads previous settings
 - Per-user isolation (only you see your styles)
 
 **Use Cases**:
@@ -321,7 +375,7 @@ await prisma.customStyle.create({
 });
 ```
 
-### 10. Professional Code Rendering
+### 11. Professional Code Rendering
 
 **Syntax Highlighting**:
 - Automatic language detection for code blocks
@@ -468,23 +522,23 @@ Current compliance: **40%** | Target: **90%+**
 
 ---
 
-## 🌐 Demo Deployment
+## 🌐 Production Deployment & Staff Pilot
 
-**Current Status**: Platform deployed to containerized AI server for demonstration and testing.
+**Current Status**: Platform deployed securely to SAMK University AI infrastructure and running an active staff pilot program.
 
 **Environment**:
 - Containerized deployment (Docker)
-- University AI server infrastructure
-- SSH-based deployment workflow
-- Accessible for stakeholder demos
+- Secure University AI server infrastructure on-premise
+- SSH-based CI/CD deployment workflow
+- Strict Role-Based Access Controls (staff-only for pilot phase)
 
 **Purpose**:
-- Validate platform functionality in production-like environment
-- Demonstrate features to university stakeholders
-- Gather feedback for pilot program
-- Prove deployment viability
+- Provide highly scalable and localized AI resources to the university.
+- Reduce recurring licensing costs with dynamic usage-based infrastructure.
+- Evaluate local self-hosted models (e.g., SAMK Qwen) vs flagship models.
+- Gather comprehensive feedback during the pilot scaling phase.
 
-**Next Steps**: Full production deployment pending SSL/TLS, PostgreSQL, and message encryption implementation.
+**Next Steps**: Expand platform access smoothly to students following the conclusion of the staff pilot program.
 
 ---
 
@@ -517,12 +571,12 @@ Current compliance: **40%** | Target: **90%+**
 
 ### Technical Achievements
 
-1. **Multi-Model Integration**: 13+ AI models including cutting-edge GPT-5
-2. **Dual API Architecture**: Seamless handling of Chat, Responses, and Image APIs
-3. **Production Fallbacks**: GPT-5 non-streaming fallback when streaming unavailable
-4. **Enterprise Patterns**: LDAP SSO, rate limiting, cost tracking, admin analytics
-5. **Production Engineering**: Comprehensive security audit, GDPR compliance planning
-6. **Real Deployment**: Containerized deployment to university AI server for demos
+1. **Multi-Model Integration**: 15+ AI models including cutting-edge GPT-5 and local self-hosted deployments (Qwen, DeepSeek).
+2. **Dual API Architecture**: Seamless handling of Chat, Responses, and Image APIs.
+3. **Advanced Admin Layer**: Enterprise-tier dynamic whitelists/blacklists and logic-based model groups routing.
+4. **Enterprise Patterns**: LDAP SSO, rate limiting, cost tracking, administrative overrides.
+5. **Production Engineering**: Comprehensive security audit, GDPR compliance planning, sophisticated history state management.
+6. **Real Deployment**: Containerized deployment to university AI server for demos.
 
 ### Business Acumen
 
@@ -544,16 +598,16 @@ Current compliance: **40%** | Target: **90%+**
 
 ## 📞 Contact & Links
 
-**Project Context**: Built for SAMK University (Finland) as cost-effective alternative to ChatGPT licensing
+**Project Context**: Built for SAMK University (Finland) as a comprehensive cost-effective enterprise AI platform and secure ChatGPT alternative. Solo developed to provide next-gen integrations securely.
 
-**Status**: Functional MVP awaiting deployment (encryption + domain provisioning)
+**Status**: Deployed to production on university infrastructure and actively scaling via a staff pilot program.
 
-**Pilot Plan**: 60 users (staff + students) at SAMK University
+**Pilot Plan**: Currently rolling out to initial staff users, building towards full university adoption.
 
-**Timeline**: November-December 2024
+**Timeline**: November 2024 - Present
 
 ---
 
-**Note**: This is a portfolio case study documenting a real development project. Cost estimates are projections pending pilot program validation. The platform is production-ready pending final security enhancements (encryption, PostgreSQL, SSL).
+**Note**: This is a portfolio case study documenting a production development project. For code access or technical inquiries, please reach out directly, as full proprietary codebase access is restricted to ensure institutional security.
 
 Built by A4R5H1L | [GitHub](https://github.com/A4R5H1L)

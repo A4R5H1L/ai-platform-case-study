@@ -126,6 +126,21 @@ The platform integrates **13+ OpenAI models** across four families, each optimiz
 - Scientific problem-solving
 - Advanced algorithmic challenges
 
+#### o3-deep-research
+**Best for**: Autonomous multi-step deep web exploration
+
+| Property | Value |
+|----------|-------|
+| **Pricing** | N/A (Packaged Cost per usage) |
+| **Capabilities** | ✅ Live web access & Citations |
+| **Max Tokens** | Up to 100k generated content |
+| **API** | Deep Research API |
+
+**Use Cases**:
+- Autonomous drafting
+- Thorough background checks
+- Deep contextual synthesis
+
 #### o3-mini
 **Best for**: Cost-effective o3 performance
 
@@ -178,6 +193,20 @@ The platform integrates **13+ OpenAI models** across four families, each optimiz
 - Long-form content generation
 - Complex multi-step tasks
 
+#### GPT-5 Pro
+**Best for**: Elite Flagship with maximum logic parameters
+
+| Property | Value |
+|----------|-------|
+| **Pricing** | Variable API load |
+| **Hardware** | Unlocked strict-reasoning capacity |
+| **Context** | 128k strict tracking |
+| **API** | Responses API |
+
+**Use Cases**:
+- Legal/Medical tier querying
+- Professional enterprise context curation
+
 #### GPT-5-mini
 **Best for**: Cost-efficient GPT-5 access
 
@@ -214,7 +243,35 @@ The platform integrates **13+ OpenAI models** across four families, each optimiz
 
 ---
 
-### 4. Image Generation - Creative AI
+### 4. Local Open-Source Models (Education Integration)
+
+**Models**: SAMK Qwen, DeepSeek R1
+
+**Characteristics**:
+- Runs securely on local on-premise hardware
+- Absolute privacy guarantees for institution data
+- Unique history truncation & limits handled specifically in-platform
+
+#### SAMK Qwen
+**Best for**: Privacy-first internal document analysis
+
+| Property | Value |
+|----------|-------|
+| **Pricing** | Capital Expenditure (Hardware) |
+| **Privacy** | ✅ Maximum Secured |
+| **API** | Chat Completions (Compatible Proxy) |
+
+#### DeepSeek R1
+**Best for**: Local analytical reasoning
+
+| Property | Value |
+|----------|-------|
+| **Pricing** | Capital Expenditure (Hardware) |
+| **Format** | Deep thinking process included |
+
+---
+
+### 5. Image Generation - Creative AI
 
 **Models**: DALL-E 2, DALL-E 3, gpt-image-1
 
@@ -316,8 +373,9 @@ Each model (except image generation) supports 4 runtime modes:
 | Model Family | Cheapest Option | Most Powerful | Best Value |
 |--------------|----------------|---------------|------------|
 | **GPT-4** | GPT-4o-mini ($0.15/$0.60) | GPT-4.1 ($2.50/$10) | GPT-4o-mini |
-| **o-Series** | o1-mini ($3/$12) | o3 ($20/$80) | o3-mini ($3.50/$14) |
-| **GPT-5** | GPT-5-nano ($0.05/$0.40) | GPT-5 ($1.25/$10) | GPT-5-mini ($0.25/$2) |
+| **o-Series** | o1-mini ($3/$12) | o3-deep-research | o3-mini ($3.50/$14) |
+| **GPT-5** | GPT-5-nano ($0.05/$0.40) | GPT-5 Pro | GPT-5-mini ($0.25/$2) |
+| **Local** | DeepSeek R1 | SAMK Qwen | Hardware fixed cost |
 | **Image** | DALL-E 2 ($2/img) | DALL-E 3 HD ($8/img) | DALL-E 2 |
 
 ---
