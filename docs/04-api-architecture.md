@@ -2,13 +2,13 @@
 
 ## Overview
 
-The platform integrates **three distinct Open AI APIs**, each with different capabilities, request/response formats, and use cases. This multi-API architecture enables support for 13+ models across chat, reasoning, and image generation.
+The platform integrates **two OpenAI API backends**, each with different capabilities, request/response formats, and use cases. This architecture enables support for 8 models across chat, reasoning, deep research, and image generation.
 
 ## The Three APIs
 
-### 1. Chat Completions API (Traditional)
+### 1. Responses API (Primary)
 
-**Used By**: GPT-4o, GPT-4o-mini, GPT-4.1, o1-mini, o1-preview, o3, o3-mini
+**Used By**: GPT-4o-mini, GPT-4o, GPT-5, GPT-5.2, GPT-5 Pro, o3-deep-research
 
 **Endpoint**: `openai.chat.completions.create()`
 
@@ -35,9 +35,9 @@ const completion = await openai.chat.completions.create({
 
 ---
 
-### 2. Responses API (New for GPT-5)
+### 1b. Responses API — Reasoning Models (GPT-5 Family)
 
-**Used By**: GPT-5, GPT-5-mini, GPT-5-nano
+**Used By**: GPT-5, GPT-5.2, GPT-5 Pro
 
 **Endpoint**: `openai.responses.stream()` or `openai.responses.create()`
 
@@ -100,7 +100,7 @@ try {
 
 ### 3. Images API
 
-**Used By**: DALL-E 2, DALL-E 3, gpt-image-1
+**Used By**: DALL-E 3, GPT Image 1
 
 **Endpoint**: `openai.images.generate()`
 
@@ -201,7 +201,7 @@ if (modelApi === "responses") {
     max_output_tokens: tuning.maxOutputTokens
   });
 } else if (modelApi === "chat") {
-  // Use Chat Completions API for most models
+  // Legacy fallback — no current models use this path (all use "responses")
   const stream = await openai.chat.completions.create({
     model,
     messages: messages,
@@ -420,20 +420,18 @@ function estimateCostInCents(modelId: string, inputTokens: number, outputTokens:
 
 ### Potential Integrations
 
-1. **Anthropic Claude API**:
-   - Similar to Chat Completions format
+1. **Local Self-Hosted Models** (e.g., Qwen, DeepSeek):
+   - OpenAI-compatible API format
+   - Maximum data privacy
+   - Lower cost, hardware investment
+
+2. **Anthropic Claude API**:
    - Add `api: "claude"` to model catalog
    - Implement conversion layer
 
-2. **Google Gemini API**:
-   - Different authentication (API key + project ID)
+3. **Google Gemini API**:
+   - Different authentication
    - Streaming via SSE supported
-   - Add to dual API architecture
-
-3. **Local Model APIs**:
-   - Ollama, LM Studio
-   - OpenAI-compatible format
-   - Lower cost, higher latency
 
 ---
 

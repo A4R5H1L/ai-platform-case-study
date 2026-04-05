@@ -76,7 +76,7 @@ model UserAccessList {
 1. Intercept user email via Blacklist -> Revoke if listed
 2. Identify assigned `ModelGroups` via explicit UserID or broad Role matching
 3. Evaluate Monthly Budget constraints ($ vs tokens)
-4. Evaluate specific limits for the individual Model (e.g., SAMK Qwen has 10x local bounds)
+4. Evaluate specific limits for the individual Model within the group
 5. Execute request -> Log to UsageStats
 
 ---

@@ -1,92 +1,100 @@
 # AI Platform - Enterprise Multi-Model Chat System
 
-> **Enterprise multi-model AI platform** | Built for SAMK University
+> **Enterprise multi-model AI platform** | Built for SAMK University | Solo Developed
 
-[![Next.js](https://img.shields.io/badge/Next.js-15.5.4-black?logo=next.js)](https://nextjs.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-15.1.7-black?logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19.1.0-blue?logo=react)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)](https://www.typescriptlang.org/)
 [![OpenAI](https://img.shields.io/badge/OpenAI-Multi--API-412991?logo=openai)](https://openai.com/)
 [![Prisma](https://img.shields.io/badge/Prisma-6.16-2D3748?logo=prisma)](https://www.prisma.io/)
 
-## 📸 Visual Showcase
-
-### User Experience
 <div align="center">
-  <img src="roboai-images/login_screen.png" alt="Login Screen" width="400" />
+  <img src="roboai-images/login_screen.png" alt="SAMK University LDAP Login" width="800" />
+  <br/><br/>
+  <img src="roboai-images/main_interface.png" alt="Main Chat Interface with Model Picker" width="800" />
+  <br/><br/>
+  <img src="roboai-images/admin_dashboard.png" alt="Admin Dashboard — Models, Budget & User Management" width="800" />
+</div>
+
+<details>
+<summary>📸 <b>Click to view more platform screenshots</b></summary>
+
+<br/>
+
+### Deep Research & Citations
+<div align="center">
+  <img src="roboai-images/reasoning_refrence.png" alt="Deep Research with Sources & Citations" width="100%" />
+  <p><em>o3 Deep Research generating cited answers with live web sources</em></p>
+</div>
+<br/>
+
+### Chat & Reasoning Models
+<div align="center">
+  <img src="roboai-images/normal_model.png" alt="GPT-5.2 Thinking Mode" width="49%" />
+  <img src="roboai-images/reasoning_model.png" alt="o3 Deep Research Searching the Web" width="49%" />
+</div>
+<br/>
+
+### User Settings & Personalization
+<div align="center">
+  <img src="roboai-images/user_controls.png" alt="Account Settings — Usage, Budget & GDPR Delete" width="100%" />
+  <p><em>Account info, monthly usage tracking, budget limits, and GDPR account deletion</em></p>
+</div>
+<br/>
+
+### Model Groups & Access Management
+<div align="center">
+  <img src="roboai-images/model_access.png" alt="Model Groups & Role-Based Access" width="100%" />
 </div>
 <br/>
 <div align="center">
-  <img src="roboai-images/main_interface.png" alt="Main Interface" width="800" />
-  <p><em>Sleek, modern Chat Interface powered by Next.js & Framer Motion</em></p>
-</div>
-<br/>
-
-### Model Capabilities & Settings
-<div align="center">
-  <img src="roboai-images/normal_model.png" alt="Standard Model" width="400" />
-  <img src="roboai-images/reasoning_model.png" alt="Reasoning Model" width="400" />
-</div>
-<div align="center">
-  <img src="roboai-images/reasoning_refrence.png" alt="Reasoning Reference" width="800" />
-  <p><em>Rich formatting with sources, thinking process, and code highlights</em></p>
-</div>
-<br/>
-<div align="center">
-  <img src="roboai-images/user_controls.png" alt="User Settings & Persistent Personas" width="800" />
-  <p><em>Extensive user controls, including Custom Styles and default model mappings</em></p>
+  <img src="roboai-images/white&black_list.png" alt="Whitelist & Blacklist Access Control" width="100%" />
+  <p><em>Fine-grained access control: Model Groups with budget caps, and user whitelisting/blacklisting</em></p>
 </div>
 
-### Admin Tools & Governance
-<div align="center">
-  <img src="roboai-images/admin_dashboard.png" alt="Admin Dashboard Overview" width="800" />
-  <img src="roboai-images/model_access.png" alt="Group Model Access" width="800" />
-  <img src="roboai-images/white&black_list.png" alt="Access Control Management" width="800" />
-  <p><em>Comprehensive administrative controls for model groupings, rate limiting, and exact user permissions</em></p>
-</div>
+</details>
 
 ---
 
 ## 🎯 Project Overview
 
-An enterprise-grade AI chat platform demonstrating **sophisticated architecture**, **multi-model integration**, and **production-ready thinking**. Built as a cost-effective alternative to commercial ChatGPT licensing for a 60-user university pilot program.
+An enterprise-grade AI chat platform demonstrating **sophisticated architecture**, **multi-model integration**, and **production-ready engineering**. Built as a cost-effective alternative to commercial ChatGPT licensing for a university staff pilot program.
 
 ### Key Achievements
 
-🚀 **15+ AI Models Integrated**
-- GPT-4 family (GPT-4o, GPT-4o-mini, GPT-4.1)
-- o-series reasoning models (o1-mini, o1-preview, o3, o3-mini)
-- **GPT-5 flagship** (GPT-5, GPT-5-mini, GPT-5-nano) with government ID verification
-- Image generation (DALL-E 2, DALL-E 3, gpt-image-1)
-- **Local Open-Source & Custom Models** (SAMK Qwen Integration, DeepSeek, Local Reasoning)
+🚀 **8 AI Models Integrated Across 4 Families**
+- GPT-4 family (GPT-4o, GPT-4o-mini)
+- GPT-5 reasoning series (GPT-5, GPT-5.2, GPT-5 Pro)
+- Deep Research (o3-deep-research with live web search & citations)
+- Image generation (DALL-E 3, GPT Image 1)
 
-💰 **88% Cost Reduction**
-- From: €23-60/user/month (ChatGPT Pro/Enterprise)
-- To: ~€2.70/user/month (usage-based OpenAI API)
-- Estimated savings: €13,116/year for 60 users (pending pilot validation)
+💰 **~88% Estimated Cost Reduction**
+- From: ~€23/user/month (ChatGPT Pro licensing)
+- To: ~€2.70/user/month estimated (usage-based OpenAI API)
+- Projected savings: ~€13,100/year for 60 users (pending full pilot validation)
 
 ⚡ **Advanced Features**
-- Dual API architecture (Chat + Responses + Image APIs)
+- Responses API architecture (all chat models use Responses API)
 - 4-mode system per model (auto/instant/thinking/pro)
 - Real-time streaming with Server-Sent Events
-- Enterprise LDAP authentication
-- Per-role rate limiting and cost tracking
-- Full image generation with safety filtering
-- Robust **Admin Dashboard** with custom Model Groups & User Access Control (Whitelist/Blacklist)
-- Advanced categorized **Model Selection UI** with real-time search and icons
-- Highly persistent User Preferences (Default Models, Custom Personas UI)
+- Enterprise LDAP authentication (via `ldapts`)
+- Dynamic Model Groups with budget controls & user access overrides
+- Hard Whitelist/Blacklist access control
+- Deep Research with automated citation rendering
+- KaTeX math rendering, streaming timer, and rich markdown
 
-🏢 **Production Planning**
-- Comprehensive security analysis (10 vulnerabilities documented)
-- GDPR compliance roadmap (9 requirements mapped)
-- Future roadmap (n8n workflows, Moodle LMS integration)
+🏢 **Production Deployed**
+- Running on SAMK University infrastructure (Docker + PostgreSQL)
+- Active staff pilot program with growing user base
+- Solo developed end-to-end
 
 ---
 
 ## 📊 Business Impact
 
 ### Problem
-SAMK University needed AI chat capabilities for 60 staff and students, facing:
-- **Fixed licensing costs**: €23/user (ChatGPT Pro) or €30-60/user (Enterprise)
+SAMK University needed AI chat capabilities for staff, facing:
+- **Fixed licensing costs**: ~€23/user (ChatGPT Pro) or ~€30-60/user (Enterprise)
 - **Budget waste**: Light users subsidize heavy users
 - **No cost visibility**: Can't track or optimize usage
 - **Scalability concerns**: Linear cost growth per user
@@ -94,81 +102,83 @@ SAMK University needed AI chat capabilities for 60 staff and students, facing:
 ### Solution
 Custom AI platform with:
 - **Usage-based pricing**: Pay only for actual API calls
-- **Multi-model support**: 13+ models for different use cases
+- **Multi-model support**: 8 models for different use cases and budgets
 - **Enterprise integration**: University LDAP authentication
 - **Cost transparency**: Real-time usage tracking and analytics
 
-### Results
+### Estimated Results
 
-| Metric | Before | After | Improvement |
+| Metric | Before | After (Est.) | Improvement |
 |--------|--------|-------|-------------|
-| **Cost (60 users)** | €1,380/month | €162/month | **88% reduction** |
-| **Model options** | 1 (GPT-4) | 13+ models | **13x choice** |
+| **Cost (60 users)** | ~€1,380/month | ~€162/month | **~88% reduction** |
+| **Model options** | 1 (whatever model comes with the plan, no choice) | 8 models via API (add any model you want) | **Full flexibility** |
 | **Cost visibility** | None | Real-time | **Full transparency** |
 | **Scalability** | Linear | Usage-based | **Optimal** |
 
-**Estimated ROI**: Break-even in <1 month | Projected Year 1 savings: €13,116
+> **Note**: All financial figures are estimates based on projected usage patterns. Actual costs depend on real pilot program data.
+
+**Estimated ROI**: Break-even in <1 month | Projected Year 1 savings: ~€13,100
 
 ---
 
 ## 🏗️ Architecture Highlights
 
-### Multi-Model System
+### Model Catalog
 
 ```
 ┌─────────────────┐
-│  GPT-4 Family   │  GPT-4o, GPT-4o-mini, GPT-4.1
+│  GPT-4 Family   │  GPT-4o-mini, GPT-4o
 │                 │  Fast, reliable, vision-capable
 └─────────────────┘
 
 ┌─────────────────┐
-│  o-Series       │  o1-mini, o1-preview, o3, o3-mini
-│  Reasoning      │  Advanced reasoning, complex problems
+│  GPT-5 Series   │  GPT-5, GPT-5.2, GPT-5 Pro
+│  Reasoning      │  Flagship reasoning with verbosity control
 └─────────────────┘
 
 ┌─────────────────┐
-│  GPT-5 Flagship │  GPT-5, GPT-5-mini, GPT-5-nano
-│                 │  Cutting-edge with verbosity control
+│  Deep Research  │  o3-deep-research
+│                 │  Autonomous web research with citations
 └─────────────────┘
 
 ┌─────────────────┐
-│  Image Gen      │  DALL-E 2, DALL-E 3, gpt-image-1
+│  Image Gen      │  DALL-E 3, GPT Image 1
 │                 │  High-quality image generation
 └─────────────────┘
 ```
 
-### Dual API Integration
+### API Integration
 
-The platform supports **three OpenAI APIs**:
+The platform routes all models through **two OpenAI API backends**:
 
-1. **Chat Completions API** - Traditional streaming chat (most models)
-2. **Responses API** - GPT-5 family with reasoning effort control
-3. **Images API** - DALL-E generation with safety filtering
+1. **Responses API** — All chat and reasoning models (GPT-4o-mini, GPT-4o, GPT-5, GPT-5.2, GPT-5 Pro, o3-deep-research)
+2. **Images API** — Image generation models (DALL-E 3, GPT Image 1)
 
 **Fallback Strategy**: When GPT-5 streaming fails (organization not verified), automatically falls back to non-streaming mode.
 
 ### Tech Stack
 
 **Frontend**:
-- Next.js 15 (App Router) + React 19
+- Next.js 15.1.7 (App Router) + React 19.1.0
 - TypeScript for full type safety
 - Tailwind CSS 4 + Framer Motion
-- React Markdown + Prism.js for code highlighting
+- React Markdown + Prism.js + KaTeX for rich rendering
 
 **Backend**:
 - Next.js Route Handlers (serverless)
-- Prisma ORM (SQLite dev → PostgreSQL production)
+- Prisma ORM (Dockerized PostgreSQL)
 - NextAuth.js for session management
-- LDAP integration for university SSO
+- LDAP integration via `ldapts` for university SSO
 
 **AI Integration**:
 - OpenAI SDK 5.23 with streaming support
-- Multi-API architecture (Chat, Responses, Image)
+- Responses API + Images API
 - Token counting and cost calculation
-- Safety filtering for image generation
+- Deep Research tool integration (`web_search_preview`)
 
 **Database**:
-- 6 Prisma models (User, ChatSession, Message, Attachment, UsageStats, CustomStyle)
+- 10 Prisma models (User, ChatSession, Message, Attachment, UsageStats, CustomStyle, ModelGroup, UserModelAccess, UserAccessList, SystemSetting)
+- Message encryption at rest (dual IV: `iv` + `reasoningIv`)
 - GDPR-compliant schema with cascade deletes
 - Per-user, per-day, per-model usage tracking
 
@@ -176,48 +186,36 @@ The platform supports **three OpenAI APIs**:
 
 ## ✨ Feature Showcase
 
-### 1. Multi-Model Selection & Custom Local Run
+### 1. Multi-Model Selection
 
-Users can choose from diverse AI models grouped logically (Flagship, Reasoning, Image, Local) utilizing a powerful searchable model selector UI:
+Users choose from 8 AI models grouped by capability via a searchable model selector UI:
 
 ```typescript
-// GPT-4 Family (Vision-capable)
-GPT-4o-mini    $0.15/$0.60 per 1M tokens    // Fast, cost-effective
-GPT-4o         $2.50/$10.00 per 1M tokens   // High-intelligence
-GPT-4.1        $2.50/$10.00 per 1M tokens   // Enhanced reasoning
+// Active models (from config.ts CONFIGURED_MODELS)
+gpt-4o-mini      $0.15/$0.60 per 1M tokens     // Fast, cost-effective
+gpt-4o           $2.50/$10.00 per 1M tokens     // High-intelligence
 
-// o-Series Reasoning Models (Extended thinking)
-o1-mini        $3.00/$12.00 + $12.00 reasoning per 1M tokens   // Efficient
-o1-preview     $15.00/$60.00 + $60.00 reasoning per 1M tokens  // Advanced
-o3             $20.00/$80.00 + $80.00 reasoning per 1M tokens  // Latest
-o3-mini        $3.50/$14.00 + $14.00 reasoning per 1M tokens   // Cost-effective
+gpt-5            $1.25/$10.00 + $10 reasoning   // Flagship reasoning
+gpt-5.2          $1.75/$14.00 + $14 reasoning   // Latest flagship
+gpt-5-pro        $15.00/$120.00 + $120 reasoning // Premium compute
 
-// GPT-5 Flagship (Verbosity control, government ID required)
-GPT-5          $1.25/$10.00 + $10.00 reasoning per 1M tokens   // Flagship
-GPT-5-mini     $0.25/$2.00 + $2.00 reasoning per 1M tokens     // Balanced
-GPT-5-nano     $0.05/$0.40 + $0.40 reasoning per 1M tokens     // Ultra-fast
+o3-deep-research $10.00/$40.00 + $40 reasoning  // Autonomous web research
 
-// Local & Custom Education Models (Data secured on-premises)
-SAMK Qwen      Local Inference                                 // Secure Institutional Data
-DeepSeek R1    Local Inference                                 // Advanced Local Reasoning
-
-// Image Generation
-DALL-E 2       $2.00 per image                                 // Fast
-DALL-E 3       $4.00-8.00 per image (Standard/HD)              // High-quality
-gpt-image-1    $5.00 input / $40.00 output                     // Latest
+gpt-image-1      $10.00/$40.00                  // Latest image generation
+dall-e-3         $4.00/$8.00                     // High-quality images
 ```
 
 
 ### 2. Advanced Mode System
 
-Each model supports 4 runtime modes with different tuning:
+Models supporting mode picker (GPT-5, GPT-5.2) adjust runtime parameters dynamically:
 
-- **Auto**: Balanced temperature and token limit (default)
+- **Auto**: Balanced reasoning and token limit (default)
 - **Instant**: Fast responses, lower token allowance
 - **Thinking**: Deep reasoning, higher token budget
-- **Pro**: Maximum capabilities, premium settings
+- **Pro**: Maximum capabilities, premium settings (up to 128k output tokens)
 
-Example configuration for GPT-4o:
+Example configuration for GPT-4o (from `config.ts`):
 ```typescript
 modes: {
   auto: { temperature: 0.65, topP: 1, maxOutputTokens: 4096 },
@@ -227,47 +225,47 @@ modes: {
 }
 ```
 
-### 3. Image Generation
+### 3. Deep Research & Citations
 
-Fully implemented with 3 models:
+The `o3-deep-research` model performs autonomous multi-step web research:
+- Live web access via `web_search_preview` tool integration
+- Automated citation extraction and inline rendering
+- Streaming timer showing research duration
+- Up to 100k generated content per query
+
+### 4. Image Generation
+
+Fully implemented with 2 models:
 
 **Features**:
-- Size selection: 512x512, 1024x1024, 1024x1536, 1536x1024
+- Size selection (1024x1024, 1024x1536, 1536x1024)
 - Quality levels: low/medium/high (→ Standard/HD for DALL-E 3)
 - Safety filtering: Automatic content rewrites for policy compliance
 - Server storage: Generated images saved to `uploads/generated/`
 - Chat integration: Images returned as message attachments
 
-**Example safety filtering**:
-```typescript
-// DALL-E 3 content policy compliance
-prompt = prompt
-  .replace(/\b(baby|infant|child)\b/gi, "young adult")
-  .replace(/\b(nude|sexual|explicit)\b/gi, "artistic")
-  .replace(/\b(violence|violent|blood)\b/gi, "dramatic");
-```
-
-### 4. Real-Time Streaming
+### 5. Real-Time Streaming
 
 Server-Sent Events (SSE) for token-by-token delivery:
 
 ```typescript
 // Streaming implementation
-const stream = await openai.chat.completions.create({
+const stream = await openai.responses.stream({
   model: 'gpt-4o',
-  messages: conversationHistory,
+  input: conversationHistory,
   stream: true,
 });
 
-for await (const chunk of stream) {
-  const content = chunk.choices[0]?.delta?.content || '';
-  controller.enqueue(`data: ${JSON.stringify({ content })}\n\n`);
+for await (const event of stream) {
+  if (event.type === 'response.output_text.delta') {
+    controller.enqueue(`data: ${JSON.stringify({ text: event.delta })}\\n\\n`);
+  }
 }
 ```
 
-### 5. Enterprise Authentication
+### 6. Enterprise Authentication
 
-**LDAP Integration**:
+**LDAP Integration** (via `ldapts`):
 - University Active Directory SSO
 - Auto-provision users on first login
 - No local password storage
@@ -276,29 +274,41 @@ for await (const chunk of stream) {
 
 **Session Security**:
 - JWT-based sessions via NextAuth
-- Configurable expiration (8-hour default recommended)
 - HTTP-only, SameSite cookies
 - Automatic session rotation
 
-### 6. Rate Limiting & Cost Control
+### 7. Dynamic Access Control & Model Groups
 
-**Per-Role Limits**:
+**Model Groups**:
+- Logically combine models (e.g., "Expensive Models", "Image Creators")
+- Assign access based on role (student, staff, admin) or specific user
+- Set monthly budget caps per group in cents
+
+**User Access Control**:
+- Hard Whitelist/Blacklist by email
+- Per-user daily message limits and budget overrides
+- Role-wide defaults with individual exceptions
+
+### 8. Rate Limiting & Cost Control
+
+**Implementation** (via ModelGroup + UserModelAccess):
 ```typescript
-model ModelRateLimit {
-  model             String   // e.g., "gpt-5"
-  userRole          UserRole // student/staff/admin
-  monthlyTokenLimit Int      // Max tokens per month
-  dailyRequestLimit Int      // Max requests per day
+model UserModelAccess {
+  userId                    String?
+  userRole                  UserRole?
+  modelGroupId              String
+  dailyMessageLimit         Int?
+  monthlyBudgetOverrideCents Int?
 }
 ```
 
 **Features**:
-- Database-driven limits (no external Redis needed for simple deployments)
-- Per-model, per-role enforcement
-- 429 errors when limits exceeded
+- Group-based budget limits (monthly cost cap in cents)
+- Per-model daily limits within groups
+- Per-user overrides for fine-grained control
 - Real-time cost tracking (cents precision)
 
-### 7. File Processing Pipeline
+### 9. File Processing Pipeline
 
 **Supported Formats**:
 - **Images**: PNG, JPG, JPEG, WebP, GIF → Vision models
@@ -311,132 +321,61 @@ model ModelRateLimit {
 - 10,000 character limit per document (token cost control)
 - Multi-file support (up to 5 files per message)
 
-### 8. Admin Dashboard
+### 10. Admin Dashboard
 
 **Features**:
 - Platform-wide usage statistics
 - Per-user token consumption
 - Cost breakdown by model
-- Top 10 users by usage
+- Top users by usage
 - Daily/monthly trends
-- GDPR-compliant (message content hidden)
+- GDPR-compliant (message content hidden from admin)
 
-**Analytics**:
-```typescript
-// Aggregated usage data
-const stats = await prisma.usageStats.groupBy({
-  by: ['model'],
-  _sum: {
-    tokensUsed: true,
-    messagesCount: true,
-    costInCents: true,
-  },
-});
-```
-
-### 9. Dynamic Access Control & Model Groups
-
-The platform administration allows granular constraint mechanisms previously unavailable via generic commercial packages:
-- **Model Groups**: Logically combine models (e.g., "Expensive Models", "Local Safe Models", "Image Creators") and assign access based on role identifiers (student, staff, admin).
-- **Hard Whitelisting & Blacklisting**: Intercept users by exact identifier to grant or suspend their platform privileges directly.
-- **Limit Controls**: Enforce history truncation for specific models (like Qwen) to preserve context limits dynamically without code modifications.
-
-### 10. Custom AI Styles (System Prompts)
+### 11. Custom AI Styles (System Prompts)
 
 **User-Created Personas**:
 - Create custom AI personalities with unique system prompts
 - Save up to 5 custom styles per user
 - Stored in database with `CustomStyle` model
 - Select from dropdown when chatting
-- Persistent UI elements ensure seamless UX across app boundaries
+- Persistent across sessions
 
-**Features**:
-- Name your custom style (e.g., "Code Reviewer", "Creative Writer")
-- Define custom system prompt that shapes AI behavior
-- Persistent across sessions & auto-loads previous settings
-- Per-user isolation (only you see your styles)
+### 12. Professional Code Rendering
 
-**Use Cases**:
-- Technical documentation writer
-- Creative storytelling assistant
-- Code review expert
-- Subject-specific tutor
-- Business analyst persona
-
-**Implementation**:
-```typescript
-// Save custom style
-await prisma.customStyle.create({
-  data: {
-    userId: session.user.id,
-    name: "Code Reviewer",
-    systemPrompt: "You are an expert code reviewer focused on best practices..."
-  }
-});
-```
-
-### 11. Professional Code Rendering
-
-**Syntax Highlighting**:
 - Automatic language detection for code blocks
 - Powered by `react-syntax-highlighter` with Prism
-- VSCode Dark Plus theme (dark mode compatible)
-- Supports 100+ programming languages
+- One-click copy to clipboard
+- KaTeX math rendering for equations
 
-**Copy to Clipboard**:
-- One-click copy button on every code block
-- Visual feedback on successful copy
-- Preserves formatting and indentation
-- Works like ChatGPT/Claude interface
-
-**Features**:
-- Language badge shows detected language
-- Line numbers (optional)
-- Syntax coloring for readability
-- Monospace font with proper spacing
-- Mobile-responsive code blocks
-
-**Example Output**:
-- User asks: "Write a Python function to sort a list"
-- AI responds with properly formatted, syntax-highlighted code
-- Copy button appears in top-right of code block
-- Click to copy → clipboard contains clean code
-
+---
 
 ## 🛠️ Development Approach
 
 ### Core Platform
 
 **Foundation**:
-- Next.js 15 (App Router) with TypeScript strict mode
-- Prisma ORM with type-safe database access
-- OpenAI SDK with streaming support
+- Next.js 15.1.7 (App Router) with TypeScript strict mode
+- Prisma ORM with type-safe database access (PostgreSQL)
+- OpenAI SDK 5.23 with streaming support
 - Modern React 19 with Server Components
 
 **Enterprise Integration**:
-- LDAP/Active Directory authentication
+- LDAP/Active Directory authentication (ldapts)
 - University SSO (no password storage)
 - Role-based access control
 - Auto-provisioning from directory
 
 **AI Integration**:
-- 13+ model support across 4 families
-- Dual API architecture (Chat + Responses + Image)
+- 8 model support across 4 families
+- Responses API + Images API architecture
 - Real-time streaming with SSE
 - Cost tracking per token
 
 **Production Features**:
 - File processing (PDF/DOCX/images)
 - Usage analytics dashboard
-- Per-role rate limiting
-- GDPR-compliant schema
-
-### Engineering Approach
-
-1. **Modern Architecture**: Next.js 15 (App Router), TypeScript strict mode
-2. **Production Libraries**: OpenAI SDK, Prisma ORM, NextAuth, enterprise patterns
-3. **Integration Focus**: Leverage existing infrastructure (LDAP, Active Directory)
-4. **Business-Driven**: Cost optimization as primary architectural constraint
+- Dynamic Model Groups with budget controls
+- GDPR-compliant schema with encryption at rest
 
 ---
 
@@ -445,20 +384,20 @@ await prisma.customStyle.create({
 ### Core Documentation
 
 - **[Executive Summary](docs/01-executive-summary.md)** - Business case and ROI analysis
-- **[Technical Architecture](docs/02-technical-architecture.md)** - System design and diagrams
-- **[Model Catalog](docs/03-model-catalog.md)** - All 13+ models documented
-- **[API Architecture](docs/04-api-architecture.md)** - Dual API integration breakdown
-- **[Image Generation](docs/05-image-generation.md)** - DALL-E implementation details
-- **[Enterprise Features](docs/06-enterprise-features.md)** - LDAP, rate limiting, admin
+- **[Technical Architecture](docs/02-technical-architecture.md)** - System design and stack
+- **[Model Catalog](docs/03-model-catalog.md)** - All 8 models documented
+- **[API Architecture](docs/04-api-architecture.md)** - Responses API + Images API integration
+- **[Image Generation](docs/05-image-generation.md)** - DALL-E / GPT Image implementation
+- **[Enterprise Features](docs/06-enterprise-features.md)** - LDAP, access control, admin
 - **[Development Timeline](docs/07-development-timeline.md)** - Iterative development journey
-- **[Cost Analysis](docs/08-cost-analysis.md)** - Detailed financial comparison
-- **[Security & Compliance](docs/09-security-compliance.md)** - GDPR roadmap, vulnerabilities
+- **[Cost Analysis](docs/08-cost-analysis.md)** - Detailed financial comparison (estimates)
+- **[Security & Compliance](docs/09-security-compliance.md)** - GDPR status, security audit
 - **[Future Roadmap](docs/10-future-roadmap.md)** - n8n workflows, Moodle integration
 
 ### Diagrams
 
 - **[System Architecture](diagrams/system-architecture.md)** - High-level system flow
-- **[Dual API Flow](diagrams/dual-api-flow.md)** - Chat vs Responses API comparison
+- **[Dual API Flow](diagrams/dual-api-flow.md)** - Responses vs Images API
 - **[Model Catalog](diagrams/model-catalog-viz.md)** - Visual model comparison
 - **[Cost Comparison](diagrams/cost-comparison.md)** - Savings visualization
 - **[Database Schema](diagrams/database-schema.md)** - ER diagram with relationships
@@ -467,78 +406,77 @@ await prisma.customStyle.create({
 
 - **[Streaming Chat](code-examples/streaming-chat.ts)** - SSE implementation
 - **[Image Generation](code-examples/image-generation.ts)** - DALL-E integration
-- **[Rate Limiting](code-examples/rate-limiting.ts)** - Per-role enforcement
+- **[Rate Limiting](code-examples/rate-limiting.ts)** - Access control enforcement
 - **[LDAP Authentication](code-examples/ldap-auth.ts)** - University SSO
 
 ---
 
 ## 🔒 Production Readiness
 
-### Current Status: **Functional MVP**
+### Current Status: **Deployed — Staff Pilot Active**
 
 **What's Production-Ready**:
-- ✅ Multi-model AI integration (13+ models)
-- ✅ Streaming chat with SSE
-- ✅ LDAP authentication
-- ✅ File upload and processing
+- ✅ All 8 AI models fully integrated and operational
+- ✅ Deep Research with live web search and citation rendering
+- ✅ Streaming chat with SSE and streaming timer
+- ✅ LDAP authentication (ldapts) working
+- ✅ File upload and processing (PDF, DOCX, images)
 - ✅ Usage tracking and cost calculation
 - ✅ Admin dashboard with analytics
-- ✅ Image generation (3 models)
-- ✅ Rate limiting (per-role database-driven)
+- ✅ Image generation (DALL-E 3, GPT Image 1)
+- ✅ Dynamic Model Groups with budget controls
+- ✅ User Whitelist/Blacklist access control
+- ✅ PostgreSQL database via Docker Compose
+- ✅ Message encryption at rest (GDPR)
+- ✅ Right-to-Erasure cascade delete endpoints (GDPR)
+- ✅ Secured Adminer database interface
 
-**Pending for Production**:
-- ⏳ Database migration: SQLite → PostgreSQL (4-8 hours)
-- ⏳ HTTPS/SSL setup (2-4 hours)
-- ⏳ API key secrets management (4-6 hours)
-- ⏳ Session security hardening (1-2 hours)
-- ⏳ Message encryption for GDPR (Est. 20-30 hours)
+**Pending for Broader Scale**:
+- ⏳ Privacy policy text (pending institutional legal review)
+- ⏳ Data export functionality (JSON export)
+- ⏳ Session security hardening (timeout tuning)
 
 ### Security Analysis
 
-From comprehensive security audit (**[full details](docs/09-security-compliance.md)**):
+From comprehensive security audits (**[full details](docs/09-security-compliance.md)**), critical vulnerabilities were identified and remediated:
 
-**Critical** (Must fix before deployment):
-1. **Database**: SQLite → PostgreSQL for concurrency
-2. **HTTPS**: SSL/TLS for credential protection
-3. **Secrets**: Move API keys to secrets manager
-
-**Estimated effort to production**: 10-18 hours for critical fixes
+**Remediated**:
+1. **Database**: Migrated from SQLite to Dockerized PostgreSQL
+2. **HTTPS**: SSL via SAMK reverse proxy
+3. **DB Admin**: Secured Adminer interface
+4. **UI Vulnerabilities**: Code audit findings fixed
 
 ### GDPR Compliance
 
-Current compliance: **40%** | Target: **90%+**
+**Implemented**:
+- ✅ Message encryption at rest (dual IV scheme)
+- ✅ Right to erasure (cascade delete endpoints)
+- ✅ Data minimization (only essential data collected)
+- ✅ Audit access controls (secured admin interface)
 
-**Missing Requirements** (**[roadmap](docs/09-security-compliance.md)**):
-1. Privacy policy and terms
-2. Data export functionality
-3. Right to erasure endpoint
-4. Consent banner for AI processing
-5. Audit logging
-6. Data encryption at rest
-
-**Estimated effort**: 30-40 hours
-
-**Total estimated effort to production**: 40-60 hours (security + encryption + deployment)
+**Pending**:
+- ⏳ Privacy policy publication (institutional approval needed)
+- ⏳ Data export/portability endpoint
 
 ---
 
 ## 🌐 Production Deployment & Staff Pilot
 
-**Current Status**: Platform deployed securely to SAMK University AI infrastructure and running an active staff pilot program.
+**Current Status**: Platform deployed to SAMK University infrastructure, running an active staff pilot program.
 
 **Environment**:
-- Containerized deployment (Docker)
-- Secure University AI server infrastructure on-premise
+- Containerized deployment (Docker Compose)
+- PostgreSQL database
+- Secure university AI server infrastructure (on-premise)
 - SSH-based CI/CD deployment workflow
-- Strict Role-Based Access Controls (staff-only for pilot phase)
+- Role-based access controls (staff-only for pilot phase)
 
 **Purpose**:
-- Provide highly scalable and localized AI resources to the university.
-- Reduce recurring licensing costs with dynamic usage-based infrastructure.
-- Evaluate local self-hosted models (e.g., SAMK Qwen) vs flagship models.
-- Gather comprehensive feedback during the pilot scaling phase.
+- Provide scalable, cost-effective AI resources to the university
+- Reduce recurring licensing costs with usage-based pricing
+- Gather feedback during pilot phase before broader rollout
 
-**Next Steps**: Expand platform access smoothly to students following the conclusion of the staff pilot program.
+**Next Steps**: Expand platform access to students following staff pilot conclusion.
 
 ---
 
@@ -546,22 +484,20 @@ Current compliance: **40%** | Target: **90%+**
 
 ### Planned Features
 
-**n8n Workflow Automation** (60-92 hours):
+**n8n Workflow Automation** (est. 60-92 hours):
 - Trigger workflows from chat
 - Pre-built templates (email, Moodle, calendar)
 - Shareable agent marketplace
 
-**Moodle LMS Integration** (42-64 hours):
+**Moodle LMS Integration** (est. 42-64 hours):
 - Course lookup and enrollment
 - Assignment tracking and deadlines
 - Grade checking
 - Real-time data sync
 
-**Enhanced Security** (42-60 hours):
-- IP-based rate limiting (DDoS protection)
-- Comprehensive audit logging
-- Cost alerts and budget controls
-- Intrusion detection
+**Local Self-Hosted Models**:
+- Integration of on-premise models (e.g., Qwen, DeepSeek)
+- Maximum data privacy for sensitive institutional use cases
 
 **See [Future Roadmap](docs/10-future-roadmap.md) for detailed breakdown**
 
@@ -571,43 +507,41 @@ Current compliance: **40%** | Target: **90%+**
 
 ### Technical Achievements
 
-1. **Multi-Model Integration**: 15+ AI models including cutting-edge GPT-5 and local self-hosted deployments (Qwen, DeepSeek).
-2. **Dual API Architecture**: Seamless handling of Chat, Responses, and Image APIs.
-3. **Advanced Admin Layer**: Enterprise-tier dynamic whitelists/blacklists and logic-based model groups routing.
-4. **Enterprise Patterns**: LDAP SSO, rate limiting, cost tracking, administrative overrides.
-5. **Production Engineering**: Comprehensive security audit, GDPR compliance planning, sophisticated history state management.
-6. **Real Deployment**: Containerized deployment to university AI server for demos.
+1. **Multi-Model Integration**: 8 AI models across 4 families including GPT-5 reasoning and deep research
+2. **Responses API Architecture**: Unified API routing for chat, reasoning, and deep research models
+3. **Advanced Admin Layer**: Dynamic Model Groups, budget controls, and user whitelisting/blacklisting
+4. **Enterprise Patterns**: LDAP SSO (ldapts), granular rate limiting, real-time cost tracking
+5. **Production Engineering**: Security audit, GDPR compliance, message encryption at rest
+6. **Live Deployment**: Containerized production deployment on university infrastructure
 
 ### Business Acumen
 
-1. **Cost Optimization**: 88% reduction through usage-based pricing
+1. **Cost Optimization**: Estimated ~88% reduction through usage-based pricing
 2. **Scalability Planning**: Costs grow with usage, not user count
-3. **ROI Analysis**: <1 month break-even, €13k Year 1 savings
-4. **Compliance Awareness**: GDPR roadmap, security audit documented
+3. **ROI Analysis**: Estimated <1 month break-even, ~€13k projected Year 1 savings
+4. **Compliance Awareness**: GDPR roadmap with encryption and erasure implemented
 5. **Stakeholder Communication**: Clear value proposition to university
 
 ### Production Thinking
 
-1. **Security First**: Comprehensive vulnerability analysis
-2. **Compliance by Design**: GDPR requirements documented upfront
-3. **Scalability Considered**: PostgreSQL migration path defined
+1. **Security First**: Comprehensive vulnerability analysis and remediation
+2. **Compliance by Design**: GDPR requirements mapped and core items implemented
+3. **Scalability**: Full PostgreSQL Docker stack deployed
 4. **Cost Transparency**: Real-time tracking enables optimization
-5. **Future-Proof**: Extensible architecture (n8n, Moodle planned)
+5. **Future-Proof**: Extensible architecture (n8n, Moodle, local models planned)
 
 ---
 
 ## 📞 Contact & Links
 
-**Project Context**: Built for SAMK University (Finland) as a comprehensive cost-effective enterprise AI platform and secure ChatGPT alternative. Solo developed to provide next-gen integrations securely.
+**Project Context**: Built for SAMK University (Finland) as a cost-effective enterprise AI platform and secure ChatGPT alternative. Solo developed end-to-end.
 
-**Status**: Deployed to production on university infrastructure and actively scaling via a staff pilot program.
+**Status**: Deployed to production on university infrastructure. Active staff pilot program with growing user base.
 
-**Pilot Plan**: Currently rolling out to initial staff users, building towards full university adoption.
-
-**Timeline**: November 2024 - Present
+**Timeline**: September 2025 – Present
 
 ---
 
-**Note**: This is a portfolio case study documenting a production development project. For code access or technical inquiries, please reach out directly, as full proprietary codebase access is restricted to ensure institutional security.
+**Note**: This is a portfolio case study documenting a production development project. The source code is proprietary. For technical inquiries, please reach out directly.
 
 Built by A4R5H1L | [GitHub](https://github.com/A4R5H1L)

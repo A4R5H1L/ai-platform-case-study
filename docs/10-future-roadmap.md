@@ -2,19 +2,17 @@
 
 ## Planned Enhancements
 
-### Phase 1: Production Launch (Est. 40-60 hours)
+### Phase 1: Pilot Feedback Resolution (Est. ~20 hours)
 
-**Priority**: Critical
+**Priority**: Current Focus
 
 | Task | Hours | Status |
 |------|-------|--------|
-| PostgreSQL migration | 4-8 | Planned |
-| SSL/TLS setup | 2-4 | Planned |
-| Secrets management | 4-6 | Planned |
-| Session hardening | 1-2 | Planned |
-| Privacy policy | 4-6 | Planned |
-| Data export/delete | 14-20 | Planned |
-| Message encryption | 20-30 | Planned |
+| UI Metric Tracking Tweaks | 4-8 | Planned |
+| Hardware GPU scaling checks | 2-4 | Planned |
+| Workflow integrations (Basic) | 4-6 | Planned |
+| Session logic fine-tuning | 1-2 | Planned |
+| Complete legal approvals | 4-6 | Ongoing |
 
 ---
 
@@ -91,6 +89,7 @@ Connect to university Moodle for educational features.
 - **Model routing**: Automatic selection based on query
 - **Caching**: Reduce API costs for common queries
 - **Voice input**: Speech-to-text integration
+- **Dedicated Hardware Proxies**: SAMK specific self-hosted local open-source models (DeepSeek R1 / SAMK Qwen)
 
 ---
 
@@ -98,10 +97,9 @@ Connect to university Moodle for educational features.
 
 Features considered but deprioritized:
 
-- Real-time collaboration (out of scope)
-- Self-hosted models (infrastructure cost)
-- Video generation (limited use case)
-- Fine-tuning (maintenance burden)
+- Real-time multiplayer collaboration (out of scope)
+- Video generation pipelines (limited institutional use case)
+- Full custom fine-tuning pipelines (maintenance burden)
 
 ---
 

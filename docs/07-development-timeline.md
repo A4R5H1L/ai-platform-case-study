@@ -2,8 +2,8 @@
 
 ## Project Evolution
 
-**Started**: September 27, 2024  
-**Production-Ready**: October 10, 2024  
+**Started**: September 27, 2025  
+**Production-Ready**: October 10, 2025  
 **Development Approach**: Iterative MVP → Features → Production hardening
 
 ---
@@ -12,7 +12,7 @@
 
 Based on actual git history from `/roboai/` repository:
 
-### Day 1: September 27, 2024
+### Day 1: September 27, 2025
 
 **08:55 AM** - Project Initialization
 ```
@@ -34,7 +34,7 @@ Revamp RoboAI UI, attachment pipeline, and admin controls
 - Admin dashboard layout
 - User authentication skeleton
 
-### Day 2: September 28, 2024
+### Day 2: September 28, 2025
 
 **03:04 AM** - Core Features Complete
 ```
@@ -53,7 +53,7 @@ Implement professional chat system with response styles, GDPR compliance, and en
 
 ## Week 1: Optimization (Sep 29 - Oct 4)
 
-### September 29, 2024
+### September 29, 2025
 ```
 Optimize performance and fix critical chat functionality
 ```
@@ -62,7 +62,7 @@ Optimize performance and fix critical chat functionality
 - Fixed streaming issues
 - Database query performance
 
-### October 4, 2024 - Multiple Updates
+### October 4, 2025 - Multiple Updates
 
 **06:49 AM** - Branding
 ```
@@ -85,7 +85,7 @@ Fix OpenAI model compatibility and API routing issues
 added dall-e 2 for cheaper image generation compared to dall-e 3 
 and tried adding o1-preview but needs org access
 ```
-- DALL-E 2 integration (cost-effective option)
+- DALL-E 2 integration (cost-effective option, later removed from active config)
 - DALL-E 3 already working
 - o1-preview attempted (blocked by org access)
 
@@ -101,7 +101,7 @@ handles the image-in-chat-history problem for all current and future models
 
 ## Week 2: Advanced Features (Oct 5 - Oct 10)
 
-### October 5, 2024
+### October 5, 2025
 
 **01:49 AM** - GPT-5 Integration
 ```
@@ -117,7 +117,7 @@ GPT-5 specific fixes working:
 - Complex response parsing
 - Dual API architecture established
 
-### October 10, 2024
+### October 10, 2025
 
 **08:49 PM** - Production Deployment Prep
 ```
@@ -165,7 +165,7 @@ GPT-5 improvements and production deployment setup:
    - MVP feature set identified upfront
 
 4. **No Premature Optimization**:
-   - SQLite initially (PostgreSQL later)
+   - Production PostgreSQL integrated via Docker
    - Local file storage (cloud later)
    - Basic rate limiting (Redis later)
    - Focus on core functionality first
@@ -174,10 +174,9 @@ GPT-5 improvements and production deployment setup:
 
 **What changed after initial 2-day build**:
 
-1. **More Models** (3 → 13+):
+1. **More Models** (3 → 8):
    - Started: GPT-4o, GPT-4o-mini, DALL-E 3
-   - Added: GPT-4.1, o1-mini, o3, o3-mini
-   - Breakthrough: GPT-5, GPT-5-mini, GPT-5-nano
+   - Added: GPT-5, GPT-5.2, GPT-5 Pro, o3-deep-research, GPT Image 1
 
 2. **Dual API Architecture**:
    - Day 1-2: Chat Completions API only
@@ -186,7 +185,7 @@ GPT-5 improvements and production deployment setup:
 
 3. **Image Generation**:
    - Day 2: DALL-E 3 working
-   - Week 1: Added DALL-E 2 (cheaper option)
+   - Week 1: Tried DALL-E 2 (cheaper option, later removed in favor of GPT Image 1)
    - Includes: Safety filtering, size/quality options
 
 4. **Production Hardening**:
@@ -221,11 +220,11 @@ GPT-5 improvements and production deployment setup:
 
 ## Commit Statistics
 
-**Total Commits**: 10  
-**Development Span**: 14 days  
+**Total Commits**: 37  
+**Development Span**: September 2025 – Present  
 **Lines Added**: ~8,000+ (estimated)  
 **Files Created**: 50+  
-**Models Integrated**: 13+  
+**Models Integrated**: 8  
 
 **Commit Breakdown**:
 - Initial Setup: 1 commit
@@ -251,7 +250,7 @@ GPT-5 improvements and production deployment setup:
 ### September 29 - October 4 (Week 1)
 - ✅ Performance optimization
 - ✅ Multi-model support
-- ✅ DALL-E 2 + 3 image generation
+- ✅ Image generation (DALL-E 3 + DALL-E 2 initially; later replaced DALL-E 2 with GPT Image 1)
 - ✅ Vision model support
 - ✅ Login screen polish
 
@@ -279,7 +278,7 @@ GPT-5 improvements and production deployment setup:
 
 1. **Testing**: Add automated tests earlier (currently manual only)
 2. **Documentation**: Write docs alongside code (did them after)
-3. **Migration Path**: Plan PostgreSQL from day 1 (SQLite → PG migration needed)
+3. **Production DB Ready**: PostgreSQL fully dockerized from the start
 4. **Error Handling**: Add comprehensive error handling from start (added week 2)
 
 ### Unexpected Wins
@@ -291,10 +290,10 @@ GPT-5 improvements and production deployment setup:
 
 ---
 
-## Current State (As of October 10, 2024)
+## Current State (As of October 10, 2025)
 
 ### Production-Ready Features
-✅ 13+ AI models integrated  
+✅ 8 AI models integrated  
 ✅ Dual API architecture (Chat + Responses + Image)  
 ✅ Streaming chat with SSE  
 ✅ File processing (PDF/DOCX/images)  
@@ -303,13 +302,13 @@ GPT-5 improvements and production deployment setup:
 ✅ Admin dashboard with analytics  
 ✅ Rate limiting (per-role, database-driven)  
 ✅ GDPR-compliant data model  
-✅ Image generation (3 models)  
+✅ Image generation (2 models)  
 ✅ Deployment docs written  
 ✅ Security review completed  
 
 ### Pending for Deployment
 ⏳ Domain provisioning (SAMK IT pending)  
-⏳ PostgreSQL migration (SQLite → production DB)  
+✅ Containerized PostgreSQL and Secured Adminer deployment
 ⏳ Message encryption (GDPR requirement)  
 ⏳ SSL/TLS certificate setup  
 ⏳ API key secrets management  
@@ -350,7 +349,7 @@ GPT-5 improvements and production deployment setup:
 
 **Technical Debt**:
 - Missing automated tests (manual only)
-- SQLite needs PostgreSQL migration
+- Validate robust concurrent transactions with PostgreSQL
 - Some error messages could be more specific
 
 ---
@@ -358,7 +357,7 @@ GPT-5 improvements and production deployment setup:
 ## Future Roadmap (Post-Deployment)
 
 ### Phase 1: Production Launch (Est. 40-60 hours)
-- PostgreSQL migration
+- Ensure PostgreSQL strict environment scaling
 - Message encryption
 - SSL setup
 - Secrets management
@@ -393,7 +392,7 @@ GPT-5 improvements and production deployment setup:
 - Evolution from MVP → production visible
 - Technical challenges solved along the way
 
-**Bottom line**: Went from `npx create-next-app` to production-ready AI platform with 13+ models in 2 weeks of focused development.
+**Bottom line**: Went from `npx create-next-app` to production-deployed AI platform with 8 models, now actively running a staff pilot.
 
 ---
 

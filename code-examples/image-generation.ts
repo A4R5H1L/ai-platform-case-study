@@ -16,7 +16,7 @@ import { randomUUID } from 'crypto';
 
 interface ImageGenerationParams {
     prompt: string;
-    model: 'dall-e-2' | 'dall-e-3' | 'gpt-image-1';
+    model: 'dall-e-3' | 'gpt-image-1';
     size?: '256x256' | '512x512' | '1024x1024' | '1024x1536' | '1536x1024';
     quality?: 'low' | 'medium' | 'high';
     userId: string;
@@ -64,7 +64,7 @@ function applySafetyFiltering(prompt: string, model: string): string {
  */
 function mapQuality(quality: string, model: string): 'standard' | 'hd' | undefined {
     if (model !== 'dall-e-3') {
-        return undefined; // DALL-E 2 doesn't support quality parameter
+        return undefined; // Only DALL-E 3 supports quality parameter
     }
 
     switch (quality) {
@@ -83,11 +83,10 @@ function mapQuality(quality: string, model: string): 'standard' | 'hd' | undefin
  * Validate and normalize image size for model
  */
 function normalizeSize(size: string | undefined, model: string): string {
-    const dalleE2Sizes = ['256x256', '512x512', '1024x1024'];
     const dalleE3Sizes = ['1024x1024', '1024x1536', '1536x1024'];
 
-    if (model === 'dall-e-2') {
-        return dalleE2Sizes.includes(size || '') ? size! : '1024x1024';
+    if (model === 'dall-e-3') {
+        return dalleE3Sizes.includes(size || '') ? size! : '1024x1024';
     }
 
     if (model === 'dall-e-3') {
@@ -203,12 +202,10 @@ export async function generateImage(params: ImageGenerationParams): Promise<Gene
  */
 function calculateImageCost(model: string, quality?: string): number {
     switch (model) {
-        case 'dall-e-2':
-            return 200; // $2.00
         case 'dall-e-3':
             return quality === 'high' ? 800 : 400; // $8.00 HD, $4.00 standard
         case 'gpt-image-1':
-            return 500; // Estimated
+            return 1000; // ~$10.00 estimated per config.ts pricing
         default:
             return 0;
     }

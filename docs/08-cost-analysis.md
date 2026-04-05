@@ -28,8 +28,9 @@ Pay only for tokens consumed:
 |-------|-------------------|-------------------|
 | GPT-4o-mini | $0.15 | $0.60 |
 | GPT-4o | $2.50 | $10.00 |
-| GPT-5 | $1.25 | $10.00 |
-| o1-preview | $15.00 | $60.00 |
+| GPT-5 | $1.25 | $10.00 (+$10 reasoning) |
+| GPT-5.2 | $1.75 | $14.00 (+$14 reasoning) |
+| GPT-5 Pro | $15.00 | $120.00 (+$120 reasoning) |
 
 ### Token Context
 
@@ -67,6 +68,8 @@ Heavy:   6 users × €15.00 = €90
 Total:  60 users           = €162/month (estimated)
 ```
 
+> **Note**: All figures are estimates. Actual costs depend on real pilot program usage patterns.
+
 ---
 
 ## Comparison
@@ -81,7 +84,7 @@ Total:  60 users           = €162/month (estimated)
 
 ### Percentage Reduction
 
-**88% cost reduction** (estimated, pending pilot validation)
+**~88% estimated cost reduction** (pending full pilot validation)
 
 ---
 
@@ -106,9 +109,9 @@ Total:  60 users           = €162/month (estimated)
 
 ### ROI
 
-- **Break-even**: < 1 month
-- **ROI**: 381%
-- **Payback period**: ~1.5 months
+- **Break-even**: < 1 month (estimated)
+- **Estimated ROI**: ~381%
+- **Payback period**: ~1.5 months (estimated)
 
 ---
 

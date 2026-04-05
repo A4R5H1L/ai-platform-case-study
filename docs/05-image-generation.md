@@ -2,23 +2,21 @@
 
 ## Overview
 
-Fully integrated image generation supporting 3 OpenAI models with safety filtering, quality controls, and server-side storage.
+Fully integrated image generation supporting 2 OpenAI models with safety filtering, quality controls, and server-side storage.
 
 ## Supported Models
 
 | Model | Pricing | Best For |
 |-------|---------|----------|
-| **DALL-E 2** | $2.00/image | Fast, cost-effective iterations |
 | **DALL-E 3** | $4.00-8.00/image | High-quality, detailed images |
-| **gpt-image-1** | $5.00 in / $40.00 out | Latest generation |
+| **GPT Image 1** | $10.00 in / $40.00 out | Latest generation |
 
 ## Size Options
 
 | Model | Available Sizes |
 |-------|-----------------|
-| DALL-E 2 | 256x256, 512x512, 1024x1024 |
 | DALL-E 3 | 1024x1024, 1024x1536 (portrait), 1536x1024 (landscape) |
-| gpt-image-1 | Model default |
+| GPT Image 1 | Model default |
 
 ## Quality Levels
 
@@ -81,7 +79,7 @@ Images are returned as chat attachments:
 
 ## Usage in Chat
 
-1. User selects image model (DALL-E 2/3 or gpt-image-1)
+1. User selects image model (DALL-E 3 or GPT Image 1)
 2. Types prompt describing desired image
 3. Optionally selects size and quality
 4. Submits message

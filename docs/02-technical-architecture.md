@@ -2,7 +2,7 @@
 
 ## System Overview
 
-Enterprise multi-model AI chat platform built with modern web technologies and production-grade patterns.
+Enterprise multi-model AI chat platform built with modern web technologies and production-grade patterns. Deployed on SAMK University infrastructure via Docker.
 
 ## High-Level Architecture
 
@@ -20,14 +20,13 @@ graph TB
     end
 
     subgraph "AI Integration"
-        ChatAPI[Chat Completions API]
         RespAPI[Responses API]
         ImgAPI[Images API]
     end
 
     subgraph "Data Layer"
         Prisma[Prisma ORM]
-        DB[(SQLite/PostgreSQL)]
+        DB[(PostgreSQL)]
         Files[File Storage]
     end
 
@@ -42,11 +41,9 @@ graph TB
     Auth --> LDAP
     
     API --> Stream
-    Stream --> ChatAPI
     Stream --> RespAPI
     API --> ImgAPI
     
-    ChatAPI --> OpenAI
     RespAPI --> OpenAI
     ImgAPI --> OpenAI
     
@@ -60,43 +57,45 @@ graph TB
 ### Frontend
 | Technology | Version | Purpose |
 |------------|---------|---------|
-| Next.js | 15.5.4 | React framework with App Router |
+| Next.js | 15.1.7 | React framework with App Router |
 | React | 19.1.0 | UI components with Server Components |
 | TypeScript | 5.x | Type safety throughout |
 | Tailwind CSS | 4.x | Utility-first styling |
-| Framer Motion | - | Animations and transitions |
-| React Markdown | - | Chat message rendering |
+| Framer Motion | 12.x | Animations and transitions |
+| React Markdown | 10.x | Chat message rendering |
+| KaTeX | 0.16.x | Math equation rendering |
 
 ### Backend
 | Technology | Version | Purpose |
 |------------|---------|---------|
-| Next.js API Routes | 15.5.4 | Serverless API handlers |
+| Next.js API Routes | 15.1.7 | Serverless API handlers |
 | Prisma | 6.16.x | Type-safe ORM |
-| NextAuth.js | - | Authentication |
+| NextAuth.js | 4.24.x | Authentication |
 | OpenAI SDK | 5.23.x | AI model integration |
+| ldapts | 8.1.x | LDAP/AD authentication |
 
 ### Database Schema
 
-10 Prisma models dynamically handling routing and security:
+10 Prisma models:
 
-1. **User**: Authentication and profile
-2. **ChatSession**: Conversation containers
-3. **Message**: Individual messages with metadata, token usages, and GDPR-compliant `iv` / `reasoningIv` encryption boundaries
-4. **Attachment**: File uploads per message
+1. **User**: Authentication and profile (LDAP-synced)
+2. **ChatSession**: Conversation containers with group labels
+3. **Message**: Individual messages with encryption fields (`iv`, `reasoningText`, `reasoningIv`)
+4. **Attachment**: File uploads per message (images, documents)
 5. **UsageStats**: Per-user, per-model, per-day tracking
 6. **CustomStyle**: User-created persistent system prompts
-7. **ModelGroup**: Logical collections of models with group-wide budgets
-8. **UserModelAccess**: Precise overrides for a user to access a specific ModelGroup
-9. **UserAccessList**: Global Blacklist/Whitelist state control
-10. **SystemSetting**: Dynamic application configuration
+7. **ModelGroup**: Logical model collections with monthly budget caps
+8. **UserModelAccess**: Per-user or per-role access overrides for model groups
+9. **UserAccessList**: Hard whitelist/blacklist by email
+10. **SystemSetting**: Dynamic application configuration key-value store
 
 ### Key Architectural Decisions
 
 1. **App Router over Pages Router**: Server Components reduce bundle size
-2. **SQLite → PostgreSQL**: Enabled concurrency and reliable relation tracking
-3. **Dual API Architecture**: Support both Chat and Responses APIs, seamlessly merging citations and tool outputs
-4. **Dynamic Model Routing**: ModelGroups decouple users from specific model strings, avoiding Redis limits dependency
-5. **Encryption at Rest**: Messages rely on a dual-IV algorithm providing GDPR-Right to Erasure through Key drops
+2. **PostgreSQL via Docker**: Production database with Prisma ORM
+3. **Responses API for all chat models**: Unified API routing (GPT-4o-mini/GPT-4o also use Responses API)
+4. **Dynamic Model Groups**: Decouple user access from hardcoded model strings
+5. **Encryption at Rest**: Dual-IV scheme for message content and reasoning text (GDPR)
 
 ---
 

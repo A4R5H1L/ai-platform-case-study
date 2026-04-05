@@ -16,7 +16,6 @@ graph TB
     end
 
     subgraph "OpenAI APIs"
-        Chat[Chat Completions API]
         Resp[Responses API]
         Img[Images API]
     end
@@ -26,7 +25,7 @@ graph TB
     end
 
     subgraph "Database"
-        DB[(PostgreSQL/SQLite)]
+        DB[(PostgreSQL)]
     end
 
     subgraph "Storage"
@@ -37,15 +36,13 @@ graph TB
     UI --> SSR
     Auth --> Auth2
     
-    API -->|GPT-4, o1, o3| Chat
-    API -->|GPT-5 family| Resp
-    API -->|DALL-E| Img
+    API -->|All chat/reasoning models| Resp
+    API -->|Image models| Img
     
     Auth2 -->|Authenticate| LDAP
     API --> DB
     API --> Files
     
-    Chat -->|Streaming| API
     Resp -->|Streaming/Non-streaming| API
     Img -->|Base64| API
 ```
@@ -389,7 +386,7 @@ stateDiagram-v2
 - SSR+CSR flexibility
 
 ### 2. Prisma ORM
-**Decision**: Prisma with SQLite (dev) → PostgreSQL (prod)
+**Decision**: Prisma with Dockerized PostgreSQL
 
 **Rationale**:
 - Type-safe database access

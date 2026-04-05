@@ -2,7 +2,7 @@
 
 ## Overview
 
-The platform supports three distinct OpenAI APIs, each with different request/response patterns.
+The platform routes models through two OpenAI API backends: Responses API (for all chat/reasoning models) and Images API (for image generation).
 
 ## API Selection Flow
 
@@ -11,22 +11,19 @@ graph TD
     Request[User Message] --> GetModel[Get Model Info]
     GetModel --> CheckAPI{API Type?}
     
-    CheckAPI -->|chat| ChatPath[Chat Completions API]
     CheckAPI -->|responses| RespPath[Responses API]
     CheckAPI -->|image| ImgPath[Images API]
     
-    ChatPath --> ChatStream[Stream Response]
     RespPath --> RespStream[Stream/Non-Stream]
     ImgPath --> ImgGen[Generate Image]
     
-    ChatStream --> SSE[SSE to Client]
-    RespStream --> SSE
+    RespStream --> SSE[SSE to Client]
     ImgGen --> Attachment[Return as Attachment]
 ```
 
-## Chat Completions API Flow
+## Responses API Flow (GPT-4 Family)
 
-**Used By**: GPT-4o, GPT-4o-mini, GPT-4.1, o1-mini, o1-preview, o3, o3-mini
+**Used By**: GPT-4o-mini, GPT-4o
 
 ```mermaid
 sequenceDiagram
@@ -48,9 +45,9 @@ sequenceDiagram
     API-->>Client: SSE event: done
 ```
 
-## Responses API Flow
+## Responses API Flow (GPT-5 Reasoning + Deep Research)
 
-**Used By**: GPT-5, GPT-5-mini, GPT-5-nano
+**Used By**: GPT-5, GPT-5.2, GPT-5 Pro, o3-deep-research
 
 ```mermaid
 sequenceDiagram
@@ -79,7 +76,7 @@ sequenceDiagram
 
 ## Images API Flow
 
-**Used By**: DALL-E 2, DALL-E 3, gpt-image-1
+**Used By**: DALL-E 3, GPT Image 1
 
 ```mermaid
 sequenceDiagram
